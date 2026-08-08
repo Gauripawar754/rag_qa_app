@@ -18,50 +18,6 @@ app.add_middleware(
 
 
 
-# @app.post("/upload", response_model=UploadResponse)
-# async def upload(file: UploadFile = File(...)):
-    
-#     if not file.filename.endswith(".txt"):
-#         raise HTTPException(415, "Only .txt files allowed")
-
-#     content = await file.read()
-#     text = content.decode("utf-8", errors="replace").strip()
-
-#     if not text:
-#         raise HTTPException(400, "Empty file")
-
-#     try:
-#         doc_id, total_chunks = rag.index_document(file.filename, text)
-#     except Exception as e:
-#         raise HTTPException(500, f"Error indexing document: {str(e)}")
-
-#     return UploadResponse(
-#         document_id=doc_id,
-#         filename=file.filename,
-#         total_chunks=total_chunks
-#     )
-
-
-
-# @app.post("/ask", response_model=AskResponse)
-# async def ask(body: AskRequest):
-
-#     try:
-#         answer, sources = rag.answer_question(
-#             body.document_id,
-#             body.question
-#         )
-#     except KeyError:
-#         raise HTTPException(404, "Document not found")
-#     except Exception as e:
-#         raise HTTPException(500, f"LLM error: {str(e)}")
-
-#     return AskResponse(
-#         answer=answer,
-#         sources=sources
-#     )
-
-
 
 
 

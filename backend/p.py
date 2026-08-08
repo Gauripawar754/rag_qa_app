@@ -2,7 +2,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmb
 from langchain_community.vectorstores import FAISS
 from langchain_classic.chains import Retrieval_QA
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-import 
+
 
 
 

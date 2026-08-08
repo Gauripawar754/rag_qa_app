@@ -16,8 +16,6 @@ store = {}
 
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 
-os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
-
 
 LLM_MODEL = "gemini-3-flash-preview"
 EMBED_MODEL = "gemini-embedding-2"   
