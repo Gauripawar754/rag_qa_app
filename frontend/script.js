@@ -1,4 +1,4 @@
-
+const API_URL = "https://document-assistant-yc7y.onrender.com";
 function show(el, cls, msg) {
   el.className = 'status-box ' + cls + ' visible';
   el.textContent = msg;
