@@ -101,7 +101,7 @@ uploadBtn.addEventListener('click', async () => {
   show(uploadStatus, '', '⏳ Uploading...');
 
   try {
-    const res = await fetch("http://127.0.0.1:8000/upload", {
+    const res = await fetch(`${API_URL}/upload`, {
       method: "POST",
       body: formData
     });
@@ -153,8 +153,10 @@ askBtn.addEventListener('click', async () => {
   spinner.classList.add('visible');
   askBtn.disabled = true;
 
+  const API_URL = "https://rag-qa-backend.onrender.com";
+
   try {
-    const res = await fetch("http://127.0.0.1:8000/ask", {
+    const res = await fetch(`${API_URL}/ask`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

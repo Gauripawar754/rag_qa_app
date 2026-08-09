@@ -20,22 +20,12 @@ app.add_middleware(
 )
 
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-FRONTEND_DIR = BASE_DIR / "frontend"
-
-
-app.mount(
-    "/static",
-    StaticFiles(directory= FRONTEND_DIR),
-    name= "static"
-)
-
-
-
 
 @app.get("/")
 async def root():
-    return  FileResponse(FRONTEND_DIR/"index.html")
+    return {
+        "message": "APP is running"
+    }
 
 
 
