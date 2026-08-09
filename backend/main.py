@@ -2,7 +2,7 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.models import AskRequest, AskResponse, UploadResponse, HealthResponse
-import rag
+from backend import rag
 
 app = FastAPI(
     title="RAG Q&A API",
