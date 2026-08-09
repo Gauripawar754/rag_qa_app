@@ -18,7 +18,12 @@ app.add_middleware(
 
 
 
-
+@app.get("/")
+def root():
+    return {
+        "message": "API is running",
+        "status": "healthy"
+    }
 
 
 @app.post("/upload", response_model=UploadResponse)
