@@ -1,5 +1,8 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+from pathlib import Path
 
 from backend.models import AskRequest, AskResponse, UploadResponse, HealthResponse
 from backend import rag
@@ -17,13 +20,26 @@ app.add_middleware(
 )
 
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+FRONTEND_DIR = BASE_DIR / "frontend"
+
+
+app.mount(
+    "/static",
+    StaticFiles(directory= FRONTEND_DIR),
+    name= "static"
+)
+
+
+
 
 @app.get("/")
-def root():
-    return {
-        "message": "API is running",
-        "status": "healthy"
-    }
+async def root():
+    return  FileResponse(FRONTEND_DIR/"index.html")
+
+
+
+
 
 
 @app.post("/upload", response_model=UploadResponse)
