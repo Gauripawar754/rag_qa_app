@@ -1,7 +1,7 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from models import AskRequest, AskResponse, UploadResponse, HealthResponse
+from backend.models import AskRequest, AskResponse, UploadResponse, HealthResponse
 import rag
 
 app = FastAPI(
