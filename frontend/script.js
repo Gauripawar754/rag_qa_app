@@ -101,7 +101,7 @@ uploadBtn.addEventListener('click', async () => {
   show(uploadStatus, '', '⏳ Uploading...');
 
   try {
-    const res = await fetch("http://127.0.0.1:8000/upload", {
+    const res = await fetch("https://your-backend.onrender.com", {
       method: "POST",
       body: formData
     });
@@ -154,7 +154,7 @@ askBtn.addEventListener('click', async () => {
   askBtn.disabled = true;
 
   try {
-    const res = await fetch("http://127.0.0.1:8000/ask", {
+    const res = await fetch("https://your-backend.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
