@@ -14,7 +14,8 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://your-app.onrender.com"],
+    allow_origins=[
+    "https://rag-qa-frontend.onrender.com"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
