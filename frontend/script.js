@@ -153,7 +153,7 @@ askBtn.addEventListener('click', async () => {
   spinner.classList.add('visible');
   askBtn.disabled = true;
 
-  const API_URL = "https://rag-qa-backend.onrender.com";
+
 
   try {
     const res = await fetch(`${API_URL}/ask`, {
